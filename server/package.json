@@ -1,0 +1,30 @@
+{
+  "name": "realtime-employee-task-mangement-tool",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "a real-time employee taks management tool that enables managers to efficiently tasks assigned to employees, track progress, and dynamically update task status. The application should support user authentication, employee management, task creation, assignment, and real-time updates for all connected users.",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "serve": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "giangthanhdat",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.8.0",
+    "express": "^4.19.2",
+    "firebase": "^10.12.4",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.14",
+    "socket.io": "^4.7.5",
+    "twilio": "^5.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
