@@ -35,7 +35,7 @@ const ChatMessage = ({
       ) : (
         <div className="w-[46px] h-[40px]"></div>
       )}
-      <div className="w-full pl-3 space-y-1">
+      <div className="pl-3 space-y-1">
         {showSenderInfo && (
           <p
             className={cn(
