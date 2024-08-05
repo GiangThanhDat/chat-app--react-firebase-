@@ -11,28 +11,27 @@ import {
 import { db } from "../../firebase.js"
 import { HttpStatusCode } from "../utils/constant.js"
 import { generateNumericOTP } from "../utils/opt.js"
-import { client } from "../utils/send-sms.js"
 
 const router = express.Router()
 
-const sendAccessCodeMessage = async (phoneNumber, accessCode) => {
-  const smsResponse = await client.messages.create({
-    body: `Your access code is: ${accessCode}. Please use this code to complete your login process. If you did not request this code, please ignore this message.`,
-    from: "+12086891367",
-    to: phoneNumber,
-  })
+// const sendAccessCodeMessage = async (phoneNumber, accessCode) => {
+//   const smsResponse = await client.messages.create({
+//     body: `Your access code is: ${accessCode}. Please use this code to complete your login process. If you did not request this code, please ignore this message.`,
+//     from: "+12086891367",
+//     to: phoneNumber,
+//   })
 
-  // .then((message) => {
-  //   console.log(`SMS sent: ${message.sid}`)
-  //   res.status(200).json({ message: "Access code sent" })
-  // })
-  // .catch((error) => {
-  //   console.error("Error sending SMS:", error)
-  //   res.status(500).json({ message: "Error sending access code" })
-  // })
+//   // .then((message) => {
+//   //   console.log(`SMS sent: ${message.sid}`)
+//   //   res.status(200).json({ message: "Access code sent" })
+//   // })
+//   // .catch((error) => {
+//   //   console.error("Error sending SMS:", error)
+//   //   res.status(500).json({ message: "Error sending access code" })
+//   // })
 
-  console.log(`SMS sent: ${smsResponse.sid}`)
-}
+//   console.log(`SMS sent: ${smsResponse.sid}`)
+// }
 
 router.route("/create-new-access-code").post(async (req, res) => {
   try {
