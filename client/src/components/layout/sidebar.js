@@ -19,14 +19,17 @@ const Sidebar = () => {
     )
 
   return (
-    <aside className="absolute bottom-0 w-full md:relative md:w-[206px] overflow-y-auto  pt-4 px-2">
-      <div className="hidden sm:block py-2 flex items-center justify-center">
-        <p className={cn("font-semibold text-xl ml-2 text-black font-sans")}>
-          RETM
+    <aside className="bg-white absolute h-auto w-full bottom-0 lg:relative lg:w-[180px] overflow-y-auto p-1 sm:pt-4 px-2">
+      <div className="hidden sm:block py-2 items-center justify-center">
+        <p
+          className={cn(
+            "font-semibold text-xl ml-2 text-black font-sans hidden lg:block"
+          )}
+        >
+          Untitled App
         </p>
-        {/* <p className="md:hidden text-center">RETM</p> */}
       </div>
-      <div className="flex sm:flex-col space-y-1">
+      <div className="flex lg:flex-col space-y-1">
         {menus.map((menu) => {
           return (
             <Link

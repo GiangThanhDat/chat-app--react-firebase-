@@ -33,7 +33,7 @@ const ChatMessage = ({
           </div>
         </div>
       ) : (
-        <div className="w-[46px] h-[40px]"></div>
+        <div className="w-[40px] h-[40px]"></div>
       )}
       <div className="pl-3 space-y-1">
         {showSenderInfo && (
@@ -46,14 +46,15 @@ const ChatMessage = ({
             {`${isUser ? "" : senderName + ", "}${formattedTime}`}
           </p>
         )}
-        <div
+        <p
           className={cn(
-            `px-3 py-2 flex gap-x-2 rounded-lg w-full flex-2`,
+            `px-3 py-2 gap-x-2 rounded-lg`,
             isUser ? "bg-blue-500/80 text-white" : "bg-gray-200"
           )}
+          style={{ overflowWrap: "anywhere" }}
         >
-          <p>{message}</p>
-        </div>
+          {message}
+        </p>
       </div>
     </div>
   )

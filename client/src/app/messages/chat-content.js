@@ -1,11 +1,10 @@
 // components/ChatContent.js
-import { Button } from "components/ui/button"
-import { Input } from "components/ui/input"
+import { forwardRef, useState } from "react"
+
 import { useAuth } from "context/auth-provider"
 import { useChat } from "context/chat-provider"
 import { cn } from "lib/utils"
-import { Send } from "lucide-react"
-import { forwardRef, useState } from "react"
+import ChatInput from "./chat-input"
 import ChatMessage from "./chat-message"
 import MessageHeader from "./message-header"
 
@@ -60,19 +59,12 @@ const ChatContent = forwardRef(({ onBack, className }, ref) => {
           )
         })}
       </div>
-      <div className="p-4 border-t flex items-center gap-3">
-        <Input
-          type="text"
-          placeholder="Type a message..."
+      <div className="p-2">
+        <ChatInput
           value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
+          onChange={setNewMessage}
+          onSent={handleSendMessage}
         />
-        <Button
-          onClick={handleSendMessage}
-          className="bg-blue-500 text-white rounded-lg"
-        >
-          <Send size={24} />
-        </Button>
       </div>
     </div>
   )

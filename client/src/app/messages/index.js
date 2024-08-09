@@ -20,7 +20,7 @@ const MessagePage = () => {
     <div className="flex">
       <ConversationList
         className={cn(
-          isContentLayout ? "hidden" : "flex max-w-full lg:max-w-72  "
+          isContentLayout ? "hidden" : "flex max-w-full lg:max-w-72  p-0"
         )}
         isContentLayout={isContentLayout}
         onConversationClick={(value) => {
@@ -28,7 +28,7 @@ const MessagePage = () => {
         }}
       />
       <ChatContent
-        className={cn(isContentLayout ? "block" : "hidden lg:block flex-1")}
+        className={cn(isContentLayout ? "block" : "hidden lg:block")}
         ref={chatContentRef}
         onBack={() => setIsContentLayout(false)}
       />
