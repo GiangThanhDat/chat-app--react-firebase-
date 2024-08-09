@@ -19,21 +19,20 @@ const ChatMessage = ({
       className={cn(
         `flex w-full items-start`,
         isUser && "justify-end",
-        isUser ? "pl-24" : "pr-14"
+        isUser ? "pl-24" : "pr-14",
+        !showSenderInfo && !isUser && "pl-10"
       )}
     >
-      {!isUser && showSenderInfo ? (
+      {!isUser && showSenderInfo && (
         <div className="flex">
           <div className="h-10 w-10 min-w-[40px] rounded-full bg-gray-200">
             <img
-              className="h-full w-full min-w-[40px] rounded-full object-cover"
-              src={avatar}
               alt=""
+              src={avatar}
+              className="h-full w-full min-w-[40px] rounded-full object-cover"
             />
           </div>
         </div>
-      ) : (
-        <div className="w-[40px] h-[40px]"></div>
       )}
       <div className="pl-3 space-y-1">
         {showSenderInfo && (
